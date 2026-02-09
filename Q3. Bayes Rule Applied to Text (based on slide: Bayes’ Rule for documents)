@@ -1,1 +1,22 @@
+In text classification, we want to decide which class c (like spam/ham or positive/negative) a document d belongs to. 
+    Bayes Rule gives:
+    P(c∣d)=P(d∣c) P(c) / P(d)
 
+1) P(c) — Prior
+    •	This is the prior probability of class ccc.
+    •	Meaning: before reading the document, how common is class ccc overall?
+    •	Example: if most training emails are “not spam”, then P(not spam) is higher.
+2) P(d ∣ c) — Likelihood
+    •	This is the likelihood.
+    •	Meaning: if the class really is ccc, how likely is it to see this document’s words?
+    •	In Naive Bayes, we estimate this using word frequencies from documents in class ccc. So if the document contains words that are common in class ccc, then P(d∣c) becomes larger.
+3) P(c ∣ d) — Posterior
+    •	This is the posterior probability.
+    •	Meaning: after seeing the document, what is the probability that the class is c?
+    •	This is what we actually use for prediction: pick the class with the highest P(c∣d).
+4) Why we ignore P(d)?
+    •	P(d) is the probability of the document itself, and it is the same number for every class when the document is fixed.
+    •	So it does not change which class is bigger.
+    •	That’s why we compare only:
+    P(c)×P(d∣c)
+    and choose the class with the larger value.
