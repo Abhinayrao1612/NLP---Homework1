@@ -1,0 +1,18 @@
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+[nltk_data] Downloading package punkt_tab to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt_tab.zip.
+Naive (text.split):
+['I', 'can’t', 'join', 'the', 'workshop', 'today,', 'but', 'I’ll', 'review', 'the', 'materials', 'later.', 'NLP', 'seems', 'confusing', 'at', 'first,', 'yet', 'it', 'becomes', 'very', 'useful', 'in', 'real-world', 'applications.', 'Many', 'people', 'don’t', 'realize', 'how', 'punctuation', 'and', 'contractions', 'influence', 'tokenization.']
+
+Manual tokens:
+['I', 'can', "n't", 'join', 'the', 'workshop', 'today', ',', 'but', 'I', "'ll", 'review', 'the', 'materials', 'later', '.', 'NLP', 'seems', 'confusing', 'at', 'first', ',', 'yet', 'it', 'becomes', 'very', 'useful', 'in', 'real-world', 'applications', '.', 'Many', 'people', 'do', "n't", 'realize', 'how', 'punctuation', 'and', 'contractions', 'influence', 'tokenization', '.']
+
+NLTK word_tokenize tokens:
+['I', 'ca', "n't", 'join', 'the', 'workshop', 'today', ',', 'but', 'I', "'ll", 'review', 'the', 'materials', 'later', '.', 'NLP', 'seems', 'confusing', 'at', 'first', ',', 'yet', 'it', 'becomes', 'very', 'useful', 'in', 'real-world', 'applications', '.', 'Many', 'people', 'do', "n't", 'realize', 'how', 'punctuation', 'and', 'contractions', 'influence', 'tokenization', '.']
+
+Differences (manual vs NLTK):
+index 1: manual='can'  nltk='ca'
+
+Why differences happen:
+NLTK follows Penn Treebank conventions (e.g., "can't" → "ca" + "n't").
