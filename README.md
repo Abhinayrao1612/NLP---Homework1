@@ -1,2 +1,77 @@
-# NLP---Homework1
-NLP homework 1
+# nlp-assignment-regex-bpe
+
+NLP assignment covering **regular expressions, Byte Pair Encoding (BPE), Bayes Rule, add-one smoothing, and tokenization**.
+
+---
+
+## Student Information
+
+- **Name:** Abhinay Rao Gandra
+- **Student ID:** 700777303
+
+---
+
+## Repository Structure
+
+### `regex_answers.md`
+
+**Explanation**  
+This file contains solutions to all the assigned regular expression problems.  
+Each regular expression is clearly written and accompanied by a short explanation describing its purpose and behavior.
+
+---
+
+### `bpe_manual.md`
+
+**Explanation**  
+This file walks through the **manual Byte Pair Encoding (BPE)** process using a toy corpus.  
+It demonstrates how end-of-word markers are added, how the most frequent character pairs are merged step by step, and how the vocabulary evolves after each merge.
+
+---
+
+### `bpe_code.py`
+
+**Explanation**  
+This Python script implements a **mini BPE learner** for the given corpus.  
+It automatically identifies frequent character combinations, performs merges, and shows how words are segmented into subword units.
+
+---
+
+### `bayes_answers.md`
+
+**Explanation**  
+This file explains **Bayes Rule in the context of text classification**.  
+It defines prior, likelihood, and posterior probabilities and explains why the denominator term can be ignored when comparing classes.
+
+---
+
+### `add_one_smoothing.md`
+
+**Explanation**  
+This file covers **add-one (Laplace) smoothing** with a worked example.  
+It shows how the smoothed denominator is calculated and how probabilities are assigned to words in the negative class, including words that do not appear in training data.
+
+---
+
+### `tokenization.py`
+
+**Explanation**  
+This Python file demonstrates different **tokenization techniques** for a short paragraph.  
+It compares naïve space-based tokenization, manually corrected tokenization, and tokenization using an NLP tool.
+
+---
+
+### `Q5_tokenization.md`
+
+**Explanation**  
+This file contains the remaining parts of the tokenization question, including:
+- Identification of **Multiword Expressions (MWEs)**
+- A short **reflection** on tokenization challenges
+
+---
+
+## How to Run the Code
+
+### BPE Code
+```bash
+python bpe_code.py
