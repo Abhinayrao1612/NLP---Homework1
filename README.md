@@ -72,6 +72,6 @@ This file contains the remaining parts of the tokenization question, including:
 
 ## How to Run the Code
 
-### BPE Code
+### tokenization code
 ```bash
-python bpe_code.py
+python tokenization.py
