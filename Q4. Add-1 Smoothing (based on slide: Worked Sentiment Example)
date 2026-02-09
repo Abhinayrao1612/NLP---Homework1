@@ -1,1 +1,37 @@
+Q4. Add-1 Smoothing (Worked Sentiment Example)
+In a Naive Bayes sentiment classification example, we are given prior probabilities and word statistics for the negative class. Add-1 (Laplace) smoothing is applied to avoid zero probabilities for unseen words.
 
+    Given Information
+    
+    Vocabulary size, 
+    ∣V∣=20
+    Total token count in the negative class, N=14
+    Count(predictable | −) = 2
+    Count(fun | −) = 0
+    Prior probabilities:
+    P(−)=3/5, P(+)=2/5
+    
+    1. Denominator for the Negative Class
+    
+    When using add-1 smoothing, the denominator for likelihood estimation is computed as:
+    N+∣V∣
+    Substituting the given values:
+    14+20=34  
+    So, for the negative class, all smoothed word probabilities will be calculated with 34 as the denominator.
+    
+    2. Likelihood Calculations
+          P(predictable∣−)
+            The given count = 2
+            Using add-1 smoothing:
+                    P(predictable∣-)= (2+1)/34 = 3/34
+        
+            After smoothing, “predictable” gets credit as if it appeared 3 times instead of 2 (2 real + 1 smoothing).
+         P(fun∣−)
+            The given count = 0
+            Using add-1 smoothing:
+                    P(fun∣-) = (0+1)/34 = 1/34
+            Even though “fun” never appeared in negative training text, it still gets a small non-zero probability (so documents containing “fun” don’t become impossible under the negative class).
+            
+        Without smoothing, P(fun∣−) = 0.
+          If a test document contains the word “fun”, then P(d∣−) becomes 0 (because of multiplication), and the classifier may wrongly reject the negative class completely. Add-1 smoothing avoids this by ensuring every word has a non-zero probability.
+   
