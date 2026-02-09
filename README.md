@@ -29,14 +29,6 @@ It demonstrates how end-of-word markers are added, how the most frequent charact
 
 ---
 
-### `bpe_code.py`
-
-**Explanation**  
-This Python script implements a **mini BPE learner** for the given corpus.  
-It automatically identifies frequent character combinations, performs merges, and shows how words are segmented into subword units.
-
----
-
 ### `Q3. Bayes Rule Applied to Text`
 
 **Explanation**  
