@@ -1,1 +1,63 @@
+1. Tokenize a Paragraph
+    My Paragraph
+    I can’t join the workshop today, but I’ll review the materials later. NLP seems confusing at first, yet it becomes very useful in real-world applications. Many people don’t realize how punctuation and contractions influence tokenization.
 
+Naïve Space-Based Tokenization
+    
+    Naïve space-based tokenization breaks text into tokens using only whitespaces (spaces, tabs, or line breaks), without considering punctuation or grammar.
+    
+    If we apply text.split(), the output will be:
+    
+    ['I', 'can’t', 'join', 'the', 'workshop', 'today,', 'but', 'I’ll', 'review', 'the', 'materials', 'later.',
+     'NLP', 'seems', 'confusing', 'at', 'first,', 'yet', 'it', 'becomes', 'very', 'useful', 'in', 'real-world', 'applications.',
+     'Many', 'people', 'don’t', 'realize', 'how', 'punctuation', 'and', 'contractions', 'influence', 'tokenization.']
+
+Manual Tokenization (Corrected)
+
+    Naïve tokenization does not handle punctuation marks or contractions correctly. To fix this, punctuation is separated and contractions are split into base words and clitics.
+    
+    ['I', 'can', "n't", 'join', 'the', 'workshop', 'today', ',', 'but', 'I', "'ll", 'review', 'the', 'materials', 'later', '.',
+     'NLP', 'seems', 'confusing', 'at', 'first', ',', 'yet', 'it', 'becomes', 'very', 'useful', 'in', 'real-world', 'applications', '.',
+     'Many', 'people', 'do', "n't", 'realize', 'how', 'punctuation', 'and', 'contractions', 'influence', 'tokenization', '.']
+
+What Was Corrected
+
+    today, → today + ,
+    later. → later + .
+    I’ll → I + 'll
+    can’t → can + n't
+    don’t → do + n't
+    applications. → applications + .
+
+2. Comparison with an NLP Tool
+    Tool Used
+    NLTK – word_tokenize()
+    When the same paragraph is tokenized using NLTK, the output is very similar to the manual version, but there are small differences in how contractions are handled.
+    Typical NLTK output:
+    ['I', 'ca', "n't", 'join', 'the', 'workshop', 'today', ',', 'but', 'I', "'ll", 'review', 'the', 'materials', 'later', '.',
+     'NLP', 'seems', 'confusing', 'at', 'first', ',', 'yet', 'it', 'becomes', 'very', 'useful', 'in', 'real-world', 'applications', '.',
+     'Many', 'people', 'do', "n't", 'realize', 'how', 'punctuation', 'and', 'contractions', 'influence', 'tokenization', '.']
+
+Which Tokens Differ? Why?
+
+    can’t
+    Manual: can + n't
+    NLTK: ca + n't
+    NLTK follows the Penn Treebank tokenization standard, which splits can’t into ca and n't. This may look unusual, but it ensures consistency across linguistic datasets used in NLP research and training.
+
+3. Multiword Expressions (MWEs)
+    Identified MWEs
+    at first
+    A fixed phrase meaning initially
+    real-world applications
+    Refers to practical usage, not literal “world” and “applications” separately
+    review the materials
+    A common action phrase representing a single task
+
+Why MWEs Should Be Single Tokens
+    
+    MWEs often express a meaning that cannot be fully understood by interpreting each word separately. Treating them as individual tokens can weaken semantic understanding, especially in tasks like sentiment analysis or information extraction.
+
+4. Reflection (5–6 Sentences)
+
+    Tokenization turned out to be more complex than I initially expected, mainly because of punctuation and contractions. Naïve space-based tokenization leaves commas and periods attached to words, which reduces accuracy for NLP tasks. Manual tokenization improves clarity by separating punctuation and breaking contractions into meaningful components. Compared to basic English tokenization, rule-based tools like NLTK provide better consistency but still follow specific conventions. Differences such as splitting can’t into ca + n't show that tokenization is not always intuitive. Multiword expressions further complicate tokenization because meaning often exists at the phrase level rather than the word level.
