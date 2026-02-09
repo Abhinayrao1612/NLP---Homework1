@@ -13,7 +13,7 @@ NLP assignment covering **regular expressions, Byte Pair Encoding (BPE), Bayes R
 
 ## Repository Structure
 
-### `regex_answers.md`
+### `Question Regex`
 
 **Explanation**  
 This file contains solutions to all the assigned regular expression problems.  
@@ -21,7 +21,7 @@ Each regular expression is clearly written and accompanied by a short explanatio
 
 ---
 
-### `bpe_manual.md`
+### `Q2.Manual BPE on a toy corpus `
 
 **Explanation**  
 This file walks through the **manual Byte Pair Encoding (BPE)** process using a toy corpus.  
@@ -37,7 +37,7 @@ It automatically identifies frequent character combinations, performs merges, an
 
 ---
 
-### `bayes_answers.md`
+### `Q3. Bayes Rule Applied to Text`
 
 **Explanation**  
 This file explains **Bayes Rule in the context of text classification**.  
@@ -45,7 +45,7 @@ It defines prior, likelihood, and posterior probabilities and explains why the d
 
 ---
 
-### `add_one_smoothing.md`
+### `Q4. Add-1 Soothing`
 
 **Explanation**  
 This file covers **add-one (Laplace) smoothing** with a worked example.  
@@ -61,7 +61,7 @@ It compares naïve space-based tokenization, manually corrected tokenization, an
 
 ---
 
-### `Q5_tokenization.md`
+### `Q5. Programming Question`
 
 **Explanation**  
 This file contains the remaining parts of the tokenization question, including:
